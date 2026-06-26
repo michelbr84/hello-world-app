@@ -6,17 +6,21 @@ A simple **Hello World** project built with **React** and **TypeScript**, scaffo
 [![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/michelbr84/hello-world-app)
+[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
+[![Linted: ESLint](https://img.shields.io/badge/linted-eslint-4B32C3.svg)](https://eslint.org/)
 
 ---
 
-## ✨ Features
+## 🌟 Features
 
 - ⚛️ **React 18** with functional components and hooks
 - 🟦 **TypeScript** for static typing and better developer experience
 - 🧪 **Jest** + **React Testing Library** ready for unit tests
-- 🏗️ **Production-ready build** with code splitting and optimization
-- 🎯 **Strict browser support** for modern browsers (Chrome, Firefox, Safari)
-- 📦 Zero runtime dependencies beyond React itself
+- 📦 **Production-ready build** with code splitting and optimization
+- 🌐 **Strict browser support** for modern browsers (Chrome, Firefox, Safari)
+- 🎨 **Prettier** — opinionated code formatter for consistent style
+- 🔍 **ESLint** — with React + TypeScript rules for clean, bug-free code
+- 🪶 Zero runtime dependencies beyond React itself
 
 ---
 
@@ -24,19 +28,21 @@ A simple **Hello World** project built with **React** and **TypeScript**, scaffo
 
 ```
 hello-world-app/
-├── public/
-│   └── index.html          # HTML template
-├── src/
-│   ├── App.css             # App-level styles
-│   ├── App.tsx             # Main App component
-│   ├── index.tsx           # Entry point
-│   └── react-app-env.d.ts  # TypeScript declarations
-├── .gitattributes          # Git attributes
-├── .gitignore              # Ignored files
-├── LICENSE.txt             # MIT License
-├── package.json            # Dependencies & scripts
-├── package-lock.json       # Locked dependency tree
-└── README.md               # You are here!
+├─── public/
+│   └─── index.html               # HTML template
+├─── src/
+│   ├─── App.css                  # App-level styles
+│   ├─── App.tsx                  # Main App component
+│   └─── index.tsx                # Entry point
+├─── .eslintrc.json               # ESLint configuration
+├─── .eslintignore                # ESLint ignore patterns
+├─── .prettierrc                  # Prettier configuration
+├─── .gitattributes               # Git attributes
+├─── .gitignore                   # Ignored files
+├─── LICENSE.txt                  # MIT License
+├─── package.json                 # Dependencies & scripts
+├─── package-lock.json            # Locked dependency tree
+└─── README.md                    # You are here!
 ```
 
 ---
@@ -81,12 +87,45 @@ Make sure you have the following installed:
 
 In the project directory, you can run:
 
-| Script          | Description                                                                 |
-| --------------- | --------------------------------------------------------------------------- |
-| `npm start`     | Runs the app in development mode at `http://localhost:3000`.                |
-| `npm test`      | Launches the test runner in interactive watch mode.                         |
-| `npm run build` | Builds the app for production to the `build/` folder.                       |
-| `npm run eject` | ⚠️ Ejects from Create React App (one-way operation, use with caution).      |
+| Script              | Description                                                                                              |
+| ------------------- | -------------------------------------------------------------------------------------------------------- |
+| `npm start`         | Runs the app in development mode at `http://localhost:3000`.                                             |
+| `npm test`          | Launches the test runner in interactive watch mode.                                                       |
+| `npm run build`     | Builds the app for production to the `build/` folder.                                                     |
+| `npm run eject`     | ⚠️ Ejects from Create React App (one-way operation, use with caution).                                    |
+| `npm run lint`      | Runs ESLint on all `.ts` / `.tsx` files under `src/`.                                                    |
+| `npm run lint:fix`  | Runs ESLint and automatically applies safe fixes where possible.                                          |
+| `npm run format`    | Formats all source files with Prettier (`.ts`, `.tsx`, `.css`).                                          |
+| `npm run format:check` | Verifies that all source files match Prettier formatting without modifying them (useful for CI).      |
+
+---
+
+## 🛠️ Developer Tools
+
+### Code Style
+
+This project uses **Prettier** for consistent formatting and **ESLint** for static analysis. Both share a single configuration so formatting rules never clash with lint rules.
+
+```bash
+# Auto-format your code
+npm run format
+
+# Check formatting without writing
+npm run format:check
+
+# Lint your code
+npm run lint
+
+# Lint and apply auto-fixes
+npm run lint:fix
+```
+
+### Editor Integration
+
+For the best experience, install these editor extensions:
+
+- **VS Code**: [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- **WebStorm / JetBrains**: ESLint and Prettier are bundled out of the box.
 
 ---
 
@@ -95,6 +134,8 @@ In the project directory, you can run:
 - **[React](https://reactjs.org/)** — A JavaScript library for building user interfaces.
 - **[TypeScript](https://www.typescriptlang.org/)** — Typed JavaScript at any scale.
 - **[Create React App](https://create-react-app.dev/)** — A comfortable setup for React projects with no build configuration.
+- **[ESLint](https://eslint.org/)** — Pluggable linter for JavaScript and TypeScript.
+- **[Prettier](https://prettier.io/)** — Opinionated code formatter.
 
 ---
 
@@ -117,7 +158,7 @@ This launches the test runner in interactive watch mode. See the [Create React A
 
 ---
 
-## 📦 Building for Production
+## 🏗️ Building for Production
 
 ```bash
 npm run build
@@ -133,9 +174,10 @@ Contributions are what make the open-source community such an amazing place to l
 
 1. Fork the project
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+3. Make sure `npm run lint` and `npm run format:check` pass
+4. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+5. Push to the branch (`git push origin feature/AmazingFeature`)
+6. Open a Pull Request
 
 ---
 
@@ -159,4 +201,4 @@ If you found this project helpful or inspiring, please consider giving it a **st
 
 ---
 
-<p align="center">Made with ❤️ and ☕ — Happy coding!</p>
+<p align="center">Made with 💡 and ❤️ — Happy coding!</p>
