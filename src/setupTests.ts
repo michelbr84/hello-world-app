@@ -1,18 +1,9 @@
-import '@testing-library/jest-dom';
-
-// jsdom does not implement window.matchMedia by default. The dark mode
-// feature uses it to detect the system color scheme during the initial
-// render, so we provide a minimal polyfill that defaults to "no match".
-Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  value: jest.fn().mockImplementation((query: string) => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: jest.fn(),
-    removeListener: jest.fn(),
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
-});
+// DEPRECATED: This file is a leftover from the Create React App / Jest era
+// and is no longer referenced by the project. The Vitest setup is in
+// `src/test-setup.ts`, which is wired up via `setupFiles` in
+// `vite.config.ts`. This file also still uses the legacy `jest.fn()`
+// global, which is incompatible with the Vitest runtime.
+//
+// This stub is kept temporarily so the removal is reviewable.
+// Delete the file entirely in a follow-up commit.
+export {};
