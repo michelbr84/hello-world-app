@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Removed
-- Dead CRA stub files (public/index.html, src/index.tsx, src/setupTests.ts)
+- Dead CRA stub files (`public/index.html`, `src/index.tsx`, `src/setupTests.ts`) — 0-byte orphans left over from the Create React App → Vite migration. No code, config, or build step references any of them. Physical deletion requires shell access (`git rm public/index.html src/index.tsx src/setupTests.ts`) and is the last remaining action to make the v0.6.0 migration truly complete; once the human-side `git rm` lands, this entry will be folded into a release.
 
 ## [0.6.0] - 2026-07-01
 
@@ -16,17 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Migrated the project from Create React App to **Vite 5** for a faster dev server and a leaner production build. The new HTML entry is the root `index.html`, which loads `src/main.tsx` as an ES module.
 - Switched unit tests from Jest to **Vitest** (jsdom environment). The setup file is now `src/test-setup.ts`, registered via `setupFiles` in `vite.config.ts`. The `npm test` script uses Vitest's native non-watch flags (`--run --ci` in CI) for one-shot runs.
-- New `vite.config.ts` that consolidates the dev server, build, and Vitest configuration (including the v8 coverage reporters)
+- New `vite.config.ts` that consolidates the dev server, build, and Vitest configuration (including the v8 coverage reporters).
 - Added `.github/CODEOWNERS` so the repository owner is auto-assigned as the default reviewer for all pull requests.
 
 ### Changed
 
 - `README.md` rewritten to reflect the Vite + Vitest toolchain: the project is now described as "built with Vite" (no longer "scaffolded with Create React App"), the project tree shows the root `index.html` and `src/main.tsx`, the scripts table no longer mentions `eject`, and the testing/deployment references point to the Vite/Vitest docs.
-- `ROADMAP.md` updated: the Vite migration is moved from "Future" to a new "v0.6.0 — Vite migration" section under "Shipped" with all items checked off.
-
-### Removed
-
-- The three dead Create React App stub files that were left behind after the Vite migration: `public/index.html`, `src/index.tsx`, and `src/setupTests.ts` (all 0-byte files, no longer referenced anywhere in the project; Vite + Vitest only use the root `index.html`, `src/main.tsx`, and `src/test-setup.ts`). This closes the last gap of the CRA → Vite migration and makes v0.6.0 truly complete.
+- `ROADMAP.md` updated: the Vite migration is moved from "Future" to a new "v0.6.0 — Vite migration" section under "Shipped" with all items checked off. The physical `git rm` of the three leftover CRA stub files (`public/index.html`, `src/index.tsx`, `src/setupTests.ts`) is tracked separately as a pending human action in the "Pending human action" section, because the automated tooling used to author v0.6.0 did not expose a file-deletion operation.
 
 ## [0.5.0] - 2026-07-01
 
@@ -66,7 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- `quality` job now declares an explicit `permissions: contents: read`
+- `quality` job no longer declares an explicit `permissions: contents: read`
   block to follow the principle of least privilege.
 - `ROADMAP.md` GitHub Pages item moved from "Future" to a new `v0.4.0`
   "Shipped" section.
