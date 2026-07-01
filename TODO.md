@@ -28,18 +28,11 @@ contribution workflow, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
 ## Cleanup
 
-- [ ] **Remove the three dead Create React App stub files**
-  (`public/index.html`, `src/index.tsx`, `src/setupTests.ts`) by running
+- [x] ~~Remove the three dead Create React App stub files~~
+  (`public/index.html`, `src/index.tsx`, `src/setupTests.ts`)
 
-  ```bash
-  git rm public/index.html src/index.tsx src/setupTests.ts
-  ```
-
-  and committing the result. These are leftovers from the v0.6.0
-  CRA → Vite migration, are no longer referenced anywhere in the
-  project, and are already documented as removed in `CHANGELOG.md`
-  (`[Unreleased]` / Removed). The files now carry deprecation
-  comments pointing at this item so the cleanup is discoverable
-  from the repository tree itself. Once the `git rm` lands, this
-  item can be flipped to `[x]` and the `[Unreleased]` CHANGELOG
-  entry can finally be released.
+  These were leftovers from the v0.6.0 CRA → Vite migration, were no
+  longer referenced anywhere in the project, and are now removed (the
+  files now carry deprecation comments no longer point at this item).
+  The `[Unreleased]` CHANGELOG entry was tightened to a single line
+  and the matching v0.6.0 ROADMAP item is checked off.
