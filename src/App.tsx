@@ -4,9 +4,14 @@ import './App.css';
 
 function App() {
   const [name, setName] = useState<string>('');
+  const [count, setCount] = useState<number>(0);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setName(event.target.value);
+  };
+
+  const handleIncrement = (): void => {
+    setCount((previous) => previous + 1);
   };
 
   return (
@@ -30,6 +35,20 @@ function App() {
           Hello, {name.trim()}!
         </p>
       )}
+
+      <div className="counter">
+        <p className="counter-label">Click counter</p>
+        <p className="counter-value" data-testid="counter-value">
+          {count}
+        </p>
+        <button
+          type="button"
+          className="counter-button"
+          onClick={handleIncrement}
+        >
+          Click me
+        </button>
+      </div>
     </div>
   );
 }
