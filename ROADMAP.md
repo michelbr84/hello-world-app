@@ -31,7 +31,7 @@ next, and longer-term ideas. Items may move as priorities shift.
 - [x] **Commitlint** enforcing the Conventional Commits format
 - [x] `CONTRIBUTING.md` with contribution guidelines, branching strategy, and PR process
 - [x] `CHANGELOG.md` to track notable changes per release
-- [x] **GitHub Actions CI** (`.github/workflows/ci.yml`) — `npm ci`, lint, test (`--watchAll=false --ci`), and build on every push and pull request to `master`
+- [x] **GitHub Actions CI** (`.github/workflows/ci.yml`) — `npm ci`, lint, test (`--run --ci`), and build on every push and pull request to `master`
 
 ### v0.3.0 — Interactive feature & coverage foundations
 
@@ -48,30 +48,37 @@ Focus: small, demo-quality feature additions and better test/documentation accur
 
 - [x] Publish a demo build to **GitHub Pages** (CI `deploy` job using
   `actions/configure-pages` + `actions/upload-pages-artifact` +
-  `actions/deploy-pages`; `homepage` field set in `package.json`)
+  `actions/deploy-pages`; `base` field set in `vite.config.ts` /
+  `homepage` field set in `package.json`)
 - [x] Manual workflow trigger via `workflow_dispatch`
 - [x] Upload the `build/` directory as a workflow artifact on non-PR runs
 
 ### v0.5.0 — Dark mode
 
-- [x] Dark mode toggle: a small theme-switch button (☀️/🌙) in the top-right
+- [x] Dark mode toggle: a small theme-switch button (🙈/😊) in the top-right
   corner of the page. The current theme is persisted to `localStorage`
   and the initial theme respects the user's `prefers-color-scheme` media
-  query. An inline pre-mount script in `public/index.html` applies the
+  query. An inline pre-mount script in `index.html` applies the
   theme before React loads to avoid a flash of the wrong color scheme.
   All hardcoded colors in `src/App.css` are now expressed as CSS custom
   properties (`:root` for light, `[data-theme="dark"]` for dark) so the
   rest of the app automatically adapts.
 - [x] Two additional unit tests covering the toggle button and the `data-theme` switch
-- [x] `src/setupTests.ts` polyfills `window.matchMedia` for jsdom
+- [x] `src/test-setup.ts` polyfills `window.matchMedia` for Vitest's jsdom environment
+
+### v0.6.0 — Vite migration
+
+- [x] Migrate from Create React App to **Vite** for a faster dev server and leaner production build
+- [x] Switch unit tests from Jest to **Vitest** (jsdom environment), wired up via `vite.config.ts` and `src/test-setup.ts`; CI uses Vitest's native non-watch flags (`--run --ci`)
+- [x] Add root `index.html` (Vite HTML entry) and remove the dead Create React App artifacts (`public/index.html`, `src/index.tsx`, `src/setupTests.ts`)
+- [x] Add `.github/CODEOWNERS` assigning `@michelbr84` as the default reviewer
 
 ---
 
 ## 🔮 Future (v1.0.0+)
 
-Longer-term directions; not yet committed. Discussions should happen in an issue before any PR.
+Longer-term directions; not yet committed. Discussion should happen in an issue before any PR.
 
-- [ ] Migrate from Create React App to **Vite** for faster dev server and build
 - [ ] Add **Storybook** for component documentation
 - [ ] Internationalization (i18n) support
 - [ ] End-to-end tests with **Playwright**
@@ -79,7 +86,7 @@ Longer-term directions; not yet committed. Discussions should happen in an issue
 
 ---
 
-## 💡 Suggesting changes
+## 💬 Suggesting changes
 
 Open an issue first to discuss significant changes before sending a PR.
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the contribution workflow
