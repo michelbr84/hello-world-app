@@ -4,7 +4,7 @@ Small, project-scoped tasks that are not yet part of the public roadmap.
 For the overall direction, see [`ROADMAP.md`](./ROADMAP.md); for the
 contribution workflow, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
-> Status legend: `[x]` done ✅ `[~]` in progress 👀 `[ ]` open
+> Status legend: `[x]` done  `[~]` in progress  `[ ]` open
 
 ## Quality & testing
 
@@ -23,7 +23,7 @@ contribution workflow, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
 ## Housekeeping
 
-- [x] Real `README.md` (see root) — superseded the previous generic
+- [x] Real `README.md` (see root) 🚧 superseded the previous generic
   placeholder that used to live in this file
 
 ## Cleanup
@@ -53,3 +53,13 @@ contribution workflow, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
   > content" was committed and immediately reverted to avoid leaving
   > a misleading commit history). The three files remain on `master`.
   > Run the `git rm` command above locally to finish this task.
+  >
+  > **Status (2026-07-01, follow-up):** A second attempt to perform
+  > the removal via the available tooling was also unable to delete
+  > the files for the same reason — the API surface exposed to the
+  > automation offers `create` / `edit` / `get` / `list` for repo
+  > contents but no `delete` operation, and no shell-level `git rm`
+  > tool is available. The three files still remain on `master` as
+  > 0-byte orphans. The exact command for a human to run locally is
+  > shown above. No further automated action is possible until a
+  > deletion-capable tool or a human with shell access picks this up.
