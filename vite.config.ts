@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -7,10 +8,9 @@ import react from '@vitejs/plugin-react';
 // for the production build. `build.outDir` matches the directory the
 // existing CI workflow uploads as the Pages artifact, so no changes
 // to `.github/workflows/ci.yml` are required for the deploy step.
-// `publicDir` is disabled because the repository still contains a
-// leftover `public/index.html` from the previous Create React App
-// scaffold; Vite's entry HTML now lives at the project root. Once the
-// orphan is deleted, this can be removed (or set back to `'public'`).
+//
+// The `test` block enables Vitest as the unit-test runner, using jsdom
+// for a browser-like environment (required for Testing Library).
 export default defineConfig({
   base: '/hello-world-app/',
   publicDir: false,
@@ -18,4 +18,15 @@ export default defineConfig({
     outDir: 'build',
   },
   plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/test-setup.ts'],
+    css: true,
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'lcov', 'json-summary', 'html'],
+      reportsDirectory: './coverage',
+    },
+  },
 });
