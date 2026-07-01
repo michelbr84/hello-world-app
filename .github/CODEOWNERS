@@ -1,0 +1,5 @@
+# Default owner for everything in this repository.
+# Michel is auto-assigned as reviewer on every pull request, which is
+# appropriate for a small single-maintainer starter project. Add more
+# specific paths with their own owners as the project grows.
+* @michelbr84
