@@ -44,3 +44,21 @@ test('click counter starts at zero and increments when the button is clicked', (
   fireEvent.click(button);
   expect(counter).toHaveTextContent('3');
 });
+
+test('renders the theme toggle button', () => {
+  render(<App />);
+  const toggle = screen.getByRole('button', { name: /switch to (light|dark) theme/i });
+  expect(toggle).toBeInTheDocument();
+});
+
+test('clicking the theme toggle flips the data-theme attribute on the document', () => {
+  render(<App />);
+  const initialTheme = document.documentElement.getAttribute('data-theme');
+  const toggle = screen.getByRole('button', { name: /switch to (light|dark) theme/i });
+
+  fireEvent.click(toggle);
+
+  const nextTheme = document.documentElement.getAttribute('data-theme');
+  expect(nextTheme).not.toBe(initialTheme);
+  expect(['light', 'dark']).toContain(nextTheme);
+});
