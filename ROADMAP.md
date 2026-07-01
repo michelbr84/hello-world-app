@@ -19,18 +19,18 @@ Provide a **clean, minimal, and modern** React + TypeScript starter that:
 
 ---
 
-## 📊 Current Status
+## 📌 Current Status
 
 **Version:** `0.1.0` — *Initial Release*
 
-| Area              | Status         | Notes                                                          |
-| ----------------- | -------------- | -------------------------------------------------------------- |
-| Core Setup        | ✅ Complete    | React 18 + TypeScript + CRA scaffolded                         |
-| Build Pipeline    | ✅ Complete    | Production-ready, code splitting, optimized output              |
-| Testing           | ✅ Complete    | Jest + React Testing Library configured                        |
-| Browser Support   | ✅ Complete    | Modern browsers (Chrome, Firefox, Safari)                      |
-| Documentation     | ✅ Complete    | Comprehensive `README.md`                                      |
-| Licensing         | ✅ Complete    | MIT License in place                                           |
+| Area              | ✅ Status      | Notes                                                |
+| ----------------- | -------------- | ---------------------------------------------------- |
+| Core Setup        | ✅ Complete    | React 18 + TypeScript + CRA scaffolded               |
+| Build Pipeline    | ✅ Complete    | Production-ready, code splitting, optimized output  |
+| Testing           | ✅ Complete    | Jest + React Testing Library configured              |
+| Browser Support   | ✅ Complete    | Modern browsers (Chrome, Firefox, Safari)            |
+| Documentation     | ✅ Complete    | Comprehensive `README.md`                            |
+| Licensing         | ✅ Complete    | MIT License in place                                 |
 
 ---
 
@@ -54,15 +54,15 @@ Provide a **clean, minimal, and modern** React + TypeScript starter that:
 > Improve the day-to-day experience for anyone using this starter.
 
 - [x] Add **ESLint + Prettier** with a shared config for consistent code style
-- [ ] Add **Husky + lint-staged** pre-commit hooks
-- [ ] Add **Commitlint** to enforce Conventional Commits
+- [x] Add **Husky + lint-staged** pre-commit hooks
+- [x] Add **Commitlint** to enforce Conventional Commits
 - [ ] Add a `CONTRIBUTING.md` with contribution guidelines
 - [ ] Add a `CHANGELOG.md` following [Keep a Changelog](https://keepachangelog.com/)
 - [ ] Add a basic **GitHub Actions CI** workflow (lint + test + build)
 
 ---
 
-### 🧪 v0.3.0 — *Testing & Quality* (Planned)
+### 🔮 v0.3.0 — *Testing & Quality* (Planned)
 > Strengthen confidence in the codebase with broader test coverage and quality tooling.
 
 - [ ] Expand unit tests for `App.tsx` and `index.tsx`
@@ -73,7 +73,7 @@ Provide a **clean, minimal, and modern** React + TypeScript starter that:
 
 ---
 
-### 🎁 v1.0.0 — *Stable & Production-Ready Starter* (Future)
+### 🌐 v1.0.0 — *Stable & Production-Ready Starter* (Future)
 > A polished, versioned v1.0 of the starter suitable for long-term use.
 
 - [ ] Migrate to **Vite** for faster dev/build times *(breaking change — will be documented)*
@@ -102,28 +102,28 @@ Provide a **clean, minimal, and modern** React + TypeScript starter that:
 
 ---
 
-## 📖 Guiding Principles
+## 🧭 Guiding Principles
 
-| Principle                       | Why it matters                                                                       |
-| ------------------------------- | ------------------------------------------------------------------------------------ |
-| 🪶 **Stay Minimal**             | The starter should remain easy to read and understand in minutes.                    |
-| 👨‍🏫 **Teach by Example**        | Code should reflect modern React + TypeScript best practices.                        |
-| 🚫 **Zero Config**              | `npm install && npm start` should be enough to run.                                  |
-| 📚 **Documented**               | Every feature and decision should be explained in the README.                        |
-| ✅ **Tested**                   | Even a starter should demonstrate how to write meaningful tests.                     |
-| 🤝 **Community-Friendly**       | Clear contribution flow, code of conduct, and issue templates.                       |
+| Principle                              | Why it matters                                                                                              |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 🍬 **Stay Minimal**                    | The starter should remain easy to read and understand in minutes.                                            |
+| 📚 **Teach by Example**                | Code should reflect modern React + TypeScript best practices.                                                |
+| 🪶 **Zero Config**                     | `npm install && npm start` should be enough to run.                                                          |
+| 📖 **Documented**                      | Every feature and decision should be explained in the README.                                                |
+| ✅ **Tested**                          | Even a starter should demonstrate how to write meaningful tests.                                             |
+| 🤝 **Community-Friendly**              | Clear contribution flow, code of conduct, and issue templates.                                               |
 
 ---
 
-## 📈 Status Legend
+## 📊 Status Legend
 
-| Symbol | Meaning               |
-| :-----: | --------------------- |
-|   ✅    | Completed             |
-|   🚧    | In Progress           |
-|   🧪    | Planned               |
-|   🎁    | Future / Vision       |
-|   🌱    | Long-term Community   |
+| Symbol | Meaning              |
+| :----: | -------------------- |
+|   ✅   | Completed            |
+|   🚧   | In Progress          |
+|   🔮   | Planned              |
+|   🌐   | Future / Vision      |
+|   🌱   | Long-term Community  |
 
 ---
 
@@ -139,12 +139,12 @@ Have an idea or suggestion?
 
 ---
 
-## 📄 License
+## 📝 License
 
 This project is licensed under the **MIT License** — see [`LICENSE.txt`](./LICENSE.txt) for details.
 
 ---
 
 <p align="center">
-  Made with 💡 and ❤️ — Happy coding!
+  Made with ❤️ and ☕ — Happy coding!
 </p>
