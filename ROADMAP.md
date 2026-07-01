@@ -4,7 +4,7 @@ This roadmap tracks the planned evolution of **Hello World App** — a minimal
 React + TypeScript starter. It reflects what has already shipped, what is
 next, and longer-term ideas. Items may move as priorities shift.
 
-> Status legend: `[x]` shipped  · `[ ]` planned
+> Status legend: `[x]` shipped · `[ ]` planned
 
 ---
 
@@ -37,10 +37,10 @@ next, and longer-term ideas. Items may move as priorities shift.
 
 Focus: small, demo-quality feature additions and better test/documentation accuracy.
 
-- [x] Add a tiny interactive feature (e.g., a name-greeting input or a click counter)
+- [x] Add a tiny interactive feature (e.g. a name-greeting input or a click counter)
 - [x] Add at least one additional unit test for the new feature
 - [x] Add an `.editorconfig` for editor consistency
-- [x] Add a code coverage report (e.g., a `coverage/` CI artifact)
+- [x] Add a code coverage report (e.g. a `coverage/` CI artifact)
 - [x] Enable Dependabot for automated dependency updates
 - [x] CI: read the Node version from `.nvmrc` instead of hardcoding `18`
 
@@ -54,7 +54,7 @@ Focus: small, demo-quality feature additions and better test/documentation accur
 
 ---
 
-## 🠱 Future (v1.0.0+)
+## 🆕 Future (v1.0.0+)
 
 Longer-term directions; not yet committed. Discussions should happen in an issue before any PR.
 
