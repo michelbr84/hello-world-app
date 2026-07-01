@@ -15,48 +15,52 @@ A simple **Hello World** project built with **React**, **TypeScript**, and **Vit
 
 ## ✨ Features
 
-- ⚛️ **React 18** with functional components and hooks
-- 🔷 **TypeScript** for static typing and better developer experience
-- 🧪 **Jest** + **React Testing Library** ready for unit tests
+- ⚡ **React 18** with functional components and hooks
+- 🔒 **TypeScript** for static typing and better developer experience
+- ✅ **Jest** + **React Testing Library** ready for unit tests
 - 📦 **Production-ready build** with code splitting and optimization
-- 🌐 **Strict browser support** for modern browsers (Chrome, Firefox, Safari)
-- 🎨 **Prettier** — opinionated code formatter for consistent style
+- 🌍 **Strict browser support** for modern browsers (Chrome, Firefox, Safari)
+- 💅 **Prettier** — opinionated code formatter for consistent style
 - 🧹 **ESLint** — with React + TypeScript rules for clean, bug-free code
 - 🪝 **Husky + lint-staged** — automatic linting and formatting on every commit
 - 📝 **Commitlint** — enforces [Conventional Commits](https://www.conventionalcommits.org/) for a tidy history
-- 🚫 **Zero runtime dependencies** beyond React itself
+- 🚫 **zero runtime dependencies** beyond React itself
 
 ---
 
-## 🏗️ Project Structure
+## 📂 Project Structure
 
 ```
 hello-world-app/
-├── index.html           # Vite HTML entry
-├── src/                 # App.css           # App-level styles
-│                        # App.tsx           # Main App component
-│                        # App.test.tsx      # App unit tests
-│                        # main.tsx          # React entry point
-│                        # test-setup.ts     # Vitest global setup
-├── .editorconfig        # Editor defaults
-├── .eslintrc.json       # ESLint configuration
-├── .eslintignore        # ESLint ignore patterns
-├── .nvmrc               # Node.js version pin
-├── .prettierrc          # Prettier configuration
-├── .gitattributes       # Git attributes
-├── .gitignore           # Ignored files
-├── CHANGELOG.md         # Notable changes per release
-├── CONTRIBUTING.md      # Contribution guide
-├── LICENSE.txt          # MIT License
-├── package.json         # Dependencies & scripts
-├── package-lock.json    # Locked dependency tree
-├── README.md            # You are here!
-├── ROADMAP.md           # Project roadmap
-├── TODO.md              # Housekeeping tasks
-├── commitlint.config.js # Commitlint rules
-├── tsconfig.json        # TypeScript config (app)
-├── tsconfig.node.json   # TypeScript config (Vite/Node)
-└── vite.config.ts       # Vite + Vitest configuration
+├── index.html            # Vite HTML entry
+├── src/                  # App.css
+│   ├── App.css           # App-level styles
+│   ├── App.tsx           # Main App component
+│   ├── App.test.tsx      # App unit tests
+│   ├── main.tsx          # React entry point
+│   ├── test-setup.ts     # Vitest global setup
+│   └── hooks/            # Reusable React hooks
+│       ├── useTheme.ts        # Theme switcher hook
+│       └── useTheme.test.ts   # Hook unit tests
+├── .editorconfig         # Editor defaults
+├── .eslintrc.json        # ESLint configuration
+├── .eslintignore         # ESLint ignore patterns
+├── .nvmrc                # Node.js version pin
+├── .prettierrc           # Prettier configuration
+├── .gitattributes        # Git attributes
+├── .gitignore            # Ignored files
+├── CHANGELOG.md          # Notable changes per release
+├── CONTRIBUTING.md       # Contribution guide
+├── LICENSE.txt           # MIT License
+├── package.json          # Dependencies & scripts
+├── package-lock.json     # Locked dependency tree
+├── README.md             # You are here!
+├── ROADMAP.md            # Project roadmap
+├── TODO.md               # Housekeeping tasks
+├── commitlint.config.js  # Commitlint rules
+├── tsconfig.json         # TypeScript config (app)
+├── tsconfig.node.json    # TypeScript config (Vite/Node)
+└── vite.config.ts        # Vite + Vitest configuration
 ```
 
 ---
@@ -103,15 +107,15 @@ Make sure you have the following installed:
 
 In the project directory, you can run:
 
-| Script                | Description                                                                 |
-| --------------------- | --------------------------------------------------------------------------- |
-| `npm start`           | Runs the app in development mode at `http://localhost:3000`.                |
-| `npm test`            | Launches the test runner in interactive watch mode.                         |
-| `npm run build`       | Builds the app for production to the `build/` folder.                      |
-| `npm run lint`        | Runs ESLint on all `.ts` / `.tsx` files under `src/`.                       |
-| `npm run lint:fix`    | Runs ESLint and automatically applies safe fixes where possible.           |
-| `npm run format`      | Formats all source files with Prettier (`.ts`, `.tsx`, `.css`).            |
-| `npm run format:check`| Verifies that all source files match Prettier formatting without modifying them (useful for CI). |
+| Script                    | Description                                                                                                                                            |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `npm start`               | Runs the app in development mode at `http://localhost:3000`.                                                                                          |
+| `npm test`                | Launches the test runner in interactive watch mode.                                                                                                   |
+| `npm run build`           | Builds the app for production to the `build/` folder.                                                                                                  |
+| `npm run lint`            | Runs ESLint on all `.ts` / `.tsx` files under `src/`.                                                                                                  |
+| `npm run lint:fix`        | Runs ESLint and automatically applies safe fixes where possible.                                                                                      |
+| `npm run format`          | Formats all source files with Prettier (`.ts`, `.tsx`, `.css`).                                                                                        |
+| `npm run format:check`    | Verifies that all source files match Prettier formatting without modifying them (useful for CI).                                                       |
 
 ---
 
@@ -147,13 +151,13 @@ The hooks are installed automatically by the `prepare` script after `npm install
 **Commit message examples:**
 
 ```bash
-# ✅ Valid ✅ passes commitlint
+# ✅ Valid — passes commitlint
 git commit -m "feat: add greeting component"
 git commit -m "fix: resolve hot-reload crash"
 git commit -m "docs: update README with setup steps"
 git commit -m "chore: bump dependencies"
 
-# ❌ Invalid ❌ will be rejected
+# ❌ Invalid — will be rejected
 git commit -m "added stuff"
 ```
 
@@ -166,7 +170,7 @@ For the best experience, install these editor extensions:
 
 ---
 
-## 🛠️ Built With
+## 🏗️ Built With
 
 - **[React](https://reactjs.org/)** — A JavaScript library for building user interfaces.
 - **[TypeScript](https://www.typescriptlang.org/)** — Typed JavaScript at any scale.
@@ -179,7 +183,7 @@ For the best experience, install these editor extensions:
 
 ---
 
-## 🌏 Browser Support
+## 🌍 Browser Support
 
 The production build supports browsers that meet the following criteria:
 
@@ -188,7 +192,7 @@ The production build supports browsers that meet the following criteria:
 
 ---
 
-## 🧪 Running Tests
+## ✅ Running Tests
 
 ```bash
 npm test
@@ -198,7 +202,7 @@ This launches the test runner in interactive watch mode. See the [Vitest docs](h
 
 ---
 
-## 📦 Building for Production
+## 🔨 Building for Production
 
 ```bash
 npm run build
@@ -212,7 +216,7 @@ The build is minified, optimized, and the filenames include hashes for cache bus
 
 A live demo is automatically published to **GitHub Pages** on every push to `master` via the CI workflow:
 
-🌐 **https://michelbr84.github.io/hello-world-app/**
+🌍 **[https://michelbr84.github.io/hello-world-app/](https://michelbr84.github.io/hello-world-app/)**
 
 How it works:
 
@@ -230,7 +234,7 @@ The `base` setting in `vite.config.ts` is set to `/hello-world-app/` so Vite gen
 
 ---
 
-## 🤝 Contributing
+## 🙌 Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -251,7 +255,7 @@ Distributed under the **MIT License**. See [`LICENSE.txt`](./LICENSE.txt) for th
 
 ---
 
-## ✍️ Author
+## 👤 Author
 
 **michelbr84**
 
@@ -259,10 +263,10 @@ Distributed under the **MIT License**. See [`LICENSE.txt`](./LICENSE.txt) for th
 
 ---
 
-## 💖 Show Your Support
+## ⭐ Show Your Support
 
 If you find this project helpful or inspiring, please consider giving it a **star** ⭐ on GitHub — it helps others discover it too!
 
 ---
 
-<p align="center">Made with ❤️ and ☕ — Happy coding!</p>
+<p align="center">Made with ❤️ and ☕ Happy coding!</p>
