@@ -4,7 +4,7 @@ Small, project-scoped tasks that are not yet part of the public roadmap.
 For the overall direction, see [`ROADMAP.md`](./ROADMAP.md); for the
 contribution workflow, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
-> Status legend: `[x]` done · `[~]` in progress · `[ ]` open
+> Status legend: `[x]` done  •  `[~]` in progress  •  `[ ]` open
 
 ## Quality & testing
 
