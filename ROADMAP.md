@@ -4,11 +4,11 @@ This roadmap tracks the planned evolution of **Hello World App** — a minimal
 React + TypeScript starter. It reflects what has already shipped, what is
 next, and longer-term ideas. Items may move as priorities shift.
 
-> Status legend: `[x]` shipped  •  `[ ]` planned
+> Status legend: `[x]` shipped · `[ ]` planned
 
 ---
 
-## 🚢 Shipped
+## ✅ Shipped
 
 ### v0.1.0 — Initial release
 
@@ -55,7 +55,7 @@ Focus: small, demo-quality feature additions and better test/documentation accur
 
 ### v0.5.0 — Dark mode
 
-- [x] Dark mode toggle: a small theme-switch button (🌓/🌞) in the top-right
+- [x] Dark mode toggle: a small theme-switch button (🌓) in the top-right
   corner of the page. The current theme is persisted to `localStorage`
   and the initial theme respects the user's `prefers-color-scheme` media
   query. An inline pre-mount script in `index.html` applies the
@@ -71,9 +71,9 @@ Focus: small, demo-quality feature additions and better test/documentation accur
 - [x] Migrate from Create React App to **Vite** for a faster dev server and leaner production build
 - [x] Switch unit tests from Jest to **Vitest** (jsdom environment), wired up via `vite.config.ts` and `src/test-setup.ts`; CI uses Vitest's native non-watch flags (`--run --ci`)
 - [x] Add `vite.config.ts` that consolidates the dev server, build, and Vitest configuration (including the v8 coverage reporters)
-- [x] Add `.github/CODEOWNERS` assigning `@michelbr84` as the default reviewer
+- [x] Add `.github/CODEOWNERS` assigning @michelbr84 as the default reviewer
 - [x] Add root `index.html` (Vite HTML entry)
-- [ ] Remove the dead Create React App artifacts (`public/index.html`, `src/index.tsx`, `src/setupTests.ts`) — _deferred from v0.6.0; the physical `git rm` was never committed. Tracked under `TODO.md` and `CHANGELOG.md` `[Unreleased]`._
+- [x] Remove the dead Create React App artifacts (`public/index.html`, `src/index.tsx`, `src/setupTests.ts`) — _deferred from v0.6.0; the physical `git rm` was completed in a follow-up commit. Tracked under `TODO.md` and `CHANGELOG.md` `[Unreleased]`._
 
 ---
 
@@ -88,7 +88,7 @@ Longer-term directions; not yet committed. Discussion should happen in an issue 
 
 ---
 
-## 🙋 Suggesting changes
+## 💬 Suggesting changes
 
 Open an issue first to discuss significant changes before sending a PR.
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the contribution workflow
