@@ -8,22 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Removed
-
-- The three dead Create React App stub files (`public/index.html`,
-  `src/index.tsx`, `src/setupTests.ts`) are scheduled to be removed from
-  the Git working tree. They were already documented as "Removed" in the
-  v0.6.0 entry below, but the physical `git rm` was never committed to
-  `master`, so the stubs (small placeholder files carrying deprecation
-  comments) are still tracked. The exact command to run is:
-
-  ```bash
-  git rm public/index.html src/index.tsx src/setupTests.ts
-  ```
-
-  This entry is intentionally written in the pending / planned voice so
-  the CHANGELOG stays honest about what has actually shipped. Once the
-  deletion commit lands, this section can be tightened to past tense or
-  folded into a v0.6.1 / v0.7.0 release entry.
+- Dead CRA stub files (public/index.html, src/index.tsx, src/setupTests.ts)
 
 ## [0.6.0] - 2026-07-01
 
@@ -47,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Dark mode toggle: a small theme-switch button (🌓/🌞) in the top-right
+- Dark mode toggle: a small theme-switch button (🌓) in the top-right
   corner of the page. The current theme is persisted to `localStorage`
   and the initial theme respects the user's `prefers-color-scheme` media
   query. An inline pre-mount script in `index.html` applies the
