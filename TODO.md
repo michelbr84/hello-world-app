@@ -1,17 +1,26 @@
-# Project README
+# TODO
 
-This is a placeholder README file content. The actual content would be retrieved from the GitHub repository's main branch.
+Small, project-scoped tasks that are not yet part of the public roadmap.
+For the overall direction, see [`ROADMAP.md`](./ROADMAP.md); for the
+contribution workflow, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
-## Overview
-This project provides example documentation and structure.
+> Status legend: `[x]` done · `[~]` in progress · `[ ]` open
 
-## Installation
-```
-npm install
-```
+## Quality & testing
 
-## Usage
-Refer to the documentation for usage details.
+- [ ] Add a code coverage report to CI (upload the `coverage/` artifact
+  or wire up Codecov / Coveralls)
+- [ ] Add an `.editorconfig` for editor consistency across contributors
+- [ ] Add at least one additional unit test once a non-trivial feature
+  is introduced in `App.tsx`
 
-## License
-MIT
+## Developer experience
+
+- [ ] Add a `CODEOWNERS` file once a maintainer team is defined
+- [ ] Apply repository labels (`good first issue`, `help wanted`) so the
+  items above are discoverable by new contributors
+
+## Housekeeping
+
+- [x] Real `README.md` (see root) — supersedes the previous generic
+  placeholder that used to live in this file
