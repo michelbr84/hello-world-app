@@ -30,7 +30,7 @@ jobs:
         run: npm run lint
 
       - name: Test
-        run: npm test -- --watchAll=false --ci
+        run: npm test -- --run --ci
 
       - name: Generate coverage report
         run: npm run test:coverage
