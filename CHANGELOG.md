@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-07-01
+
 ### Added
 
 - Migrated the project from Create React App to **Vite 5** for a faster dev server and a leaner production build. The new HTML entry is the root `index.html`, which loads `src/main.tsx` as an ES module.
@@ -14,26 +16,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New `vite.config.ts` that consolidates the dev server, build, and Vitest configuration (including the v8 coverage reporters).
 - Added `.github/CODEOWNERS` so the repository owner is auto-assigned as the default reviewer for all pull requests.
 
-### Pending cleanup (v0.6.0)
-
-The following Create React App artifacts are no longer referenced anywhere in the project (Vite + Vitest only use the root `index.html`, `src/main.tsx`, and `src/test-setup.ts`), but they are still tracked in the repository and must be removed in a follow-up commit:
-
-- `public/index.html` (0-byte stub, not used by Vite)
-- `src/index.tsx` (0-byte stub, not the real entry point)
-- `src/setupTests.ts` (0-byte stub, replaced by `src/test-setup.ts`)
-
-Tracked here so the v0.6.0 release notes can be finalized once `git rm` clears these files.
-
 ### Changed
 
 - `README.md` rewritten to reflect the Vite + Vitest toolchain: the project is now described as "built with Vite" (no longer "scaffolded with Create React App"), the project tree shows the root `index.html` and `src/main.tsx`, the scripts table no longer mentions `eject`, and the testing/deployment references point to the Vite/Vitest docs.
 - `ROADMAP.md` updated: the Vite migration is moved from "Future" to a new "v0.6.0 — Vite migration" section under "Shipped" with all items checked off.
 
+### Removed
+
+- The three dead Create React App stub files that were left behind after the Vite migration: `public/index.html`, `src/index.tsx`, and `src/setupTests.ts` (all 0-byte files, no longer referenced anywhere in the project; Vite + Vitest only use the root `index.html`, `src/main.tsx`, and `src/test-setup.ts`). This closes the last gap of the CRA → Vite migration and makes v0.6.0 truly complete.
+
 ## [0.5.0] - 2026-07-01
 
 ### Added
 
-- Dark mode toggle: a small theme-switch button (🌓) in the top-right
+- Dark mode toggle: a small theme-switch button (🌞/🌙) in the top-right
   corner of the page. The current theme is persisted to `localStorage`
   and the initial theme respects the user's `prefers-color-scheme` media
   query. An inline pre-mount script in `index.html` applies the
@@ -129,7 +125,8 @@ Tracked here so the v0.6.0 release notes can be finalized once `git rm` clears t
 - **MIT License** (`LICENSE.txt`).
 - Polished `README.md` with badges, getting-started guide, available scripts, and developer tooling documentation.
 
-[Unreleased]: https://github.com/michelbr84/hello-world-app/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/michelbr84/hello-world-app/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/michelbr84/hello-world-app/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/michelbr84/hello-world-app/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/michelbr84/hello-world-app/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/michelbr84/hello-world-app/compare/v0.2.0...v0.3.0
