@@ -7,20 +7,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-07-01
+
+### Added
+
+- `homepage` field in `package.json` pointing at the GitHub Pages URL so
+  Create React App generates correct absolute asset paths under the
+  `/hello-world-app/` sub-path.
+- New `deploy` job in `.github/workflows/ci.yml` that builds the app and
+  publishes it to GitHub Pages using the official
+  `actions/configure-pages` + `actions/upload-pages-artifact` +
+  `actions/deploy-pages` actions. Runs only on push to `master` and only
+  after the `quality` job succeeds. Scoped to the `pages: write`,
+  `id-token: write`, and `contents: read` permissions.
+- `workflow_dispatch` trigger so the CI workflow can be re-run manually
+  from the Actions tab (useful for redeploying without a code change).
+- Build artifact (`build/`) is now uploaded on non-PR runs for quick
+  debugging via the Actions UI.
+- README updated with a "Live Demo" badge, a new `## Deployment` section
+  explaining how the pipeline works, and the one-time repository setting
+  required to enable GitHub Pages via Actions.
+
+### Changed
+
+- `quality` job now declares an explicit `permissions: contents: read`
+  block to follow the principle of least privilege.
+- `ROADMAP.md` GitHub Pages item moved from "Future" to a new `v0.4.0`
+  "Shipped" section.
+- `TODO.md` coverage item corrected from `[ ]` to `[x]` (it shipped in
+  v0.3.0 but was left stale).
+
 ## [0.3.0] - 2026-07-01
 
 ### Added
 
 - Tiny interactive feature: a name-greeting input in `App` that renders a
-  personalised "Hello, {name}!" message once the user types a non-blank name.
-- Two additional unit tests in `App.test.tsx` covering the personalised
+  personalized "Hello, {name}!" message once the user types a non-blank name.
+- Two additional unit tests in `App.test.tsx` covering the personalized
   greeting and whitespace trimming behaviour.
 - `.editorconfig` at the repository root for consistent editor defaults
   (charset, EOL, indentation).
 - `test:coverage` npm script (`react-scripts test --coverage --watchAll=false`)
   to generate a Jest/Istanbul coverage report locally and in CI.
 - CI step that generates a coverage report and uploads the `coverage/`
-  directory as a build artifact (always run, even when the test step fails).
+  directory as a build artifact (always runs, even when the test step fails).
 - Dependabot configuration (`.github/dependabot.yml`) for weekly grouped
   dependency updates (with React 18.x ignored while the project targets v18).
 
@@ -62,7 +92,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **MIT License** (`LICENSE.txt`).
 - Polished `README.md` with badges, getting-started guide, available scripts, and developer tooling documentation.
 
-[Unreleased]: https://github.com/michelbr84/hello-world-app/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/michelbr84/hello-world-app/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/michelbr84/hello-world-app/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/michelbr84/hello-world-app/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/michelbr84/hello-world-app/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/michelbr84/hello-world-app/releases/tag/v0.1.0
