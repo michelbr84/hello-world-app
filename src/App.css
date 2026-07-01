@@ -1,102 +1,200 @@
 /* src/App.css */
+:root {
+  --color-bg: #f6f8fa;
+  --color-text: #333333;
+  --color-text-muted: #555555;
+  --color-card-bg: #ffffff;
+  --color-border: #e1e4e8;
+  --color-input-border: #cccccc;
+  --color-focus: #4a90e2;
+  --color-focus-shadow: rgba(74, 144, 226, 0.25);
+  --color-focus-shadow-strong: rgba(74, 144, 226, 0.4);
+  --color-success: #1a7f37;
+  --color-counter-label: #586069;
+  --color-button-bg: #4a90e2;
+  --color-button-bg-hover: #357abd;
+  --color-button-text: #ffffff;
+  --color-shadow: rgba(27, 31, 35, 0.04);
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --color-bg: #0d1117;
+  --color-text: #e6edf3;
+  --color-text-muted: #8b949e;
+  --color-card-bg: #161b22;
+  --color-border: #30363d;
+  --color-input-border: #30363d;
+  --color-focus: #58a6ff;
+  --color-focus-shadow: rgba(88, 166, 255, 0.25);
+  --color-focus-shadow-strong: rgba(88, 166, 255, 0.4);
+  --color-success: #3fb950;
+  --color-counter-label: #8b949e;
+  --color-button-bg: #238636;
+  --color-button-bg-hover: #2ea043;
+  --color-button-text: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: #f6f8fa;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--color-bg);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--color-button-text);
+  background-color: var(--color-button-bg);
+  border: 1px solid var(--color-button-bg);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    transform 0.05s ease-in-out;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-button-bg-hover);
+  border-color: var(--color-button-bg-hover);
+}
+
+.theme-toggle:active {
+  transform: translateY(1px);
+}
+
+.theme-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-focus-shadow-strong);
 }
 
 h1 {
-    color: #333;
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
-    color: #555;
-    font-size: 1.2rem;
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
 }
 
 .greeting-label {
-    color: #444;
-    font-size: 1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .greeting-input {
-    padding: 0.5rem 0.75rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 16rem;
-    max-width: 80%;
-    outline: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-input-border);
+  border-radius: 4px;
+  width: 16rem;
+  max-width: 80%;
+  outline: none;
+  transition:
+    background-color 0.2s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 .greeting-input:focus {
-    border-color: #4a90e2;
-    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.25);
+  border-color: var(--color-focus);
+  box-shadow: 0 0 0 2px var(--color-focus-shadow);
 }
 
 .greeting-message {
-    margin-top: 1rem;
-    color: #1a7f37;
-    font-weight: 600;
+  margin-top: 1rem;
+  color: var(--color-success);
+  font-weight: 600;
 }
 
 .counter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-    padding: 1.25rem 1.5rem;
-    background: #ffffff;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(27, 31, 35, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px var(--color-shadow);
+  transition:
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
 }
 
 .counter-label {
-    color: #586069;
-    font-size: 0.9rem;
-    margin: 0 0 0.25rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  color: var(--color-counter-label);
+  font-size: 0.9rem;
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .counter-value {
-    color: #1a7f37;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 0 0 0.75rem;
-    min-width: 3rem;
-    text-align: center;
+  color: var(--color-success);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  min-width: 3rem;
+  text-align: center;
 }
 
 .counter-button {
-    padding: 0.5rem 1.25rem;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #4a90e2;
-    border: 1px solid #4a90e2;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.05s ease-in-out;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  color: var(--color-button-text);
+  background-color: var(--color-button-bg);
+  border: 1px solid var(--color-button-bg);
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    transform 0.05s ease-in-out;
 }
 
 .counter-button:hover {
-    background-color: #357abd;
-    border-color: #357abd;
+  background-color: var(--color-button-bg-hover);
+  border-color: var(--color-button-bg-hover);
 }
 
 .counter-button:active {
-    transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 .counter-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.4);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-focus-shadow-strong);
 }
