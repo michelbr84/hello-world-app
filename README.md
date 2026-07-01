@@ -1,10 +1,11 @@
 # 👋 Hello World App
 
-A simple **Hello World** project built with **React** and **TypeScript**, scaffolded with [Create React App](https://create-react-app.dev/). It serves as a minimal starter to demonstrate a clean React + TypeScript setup — perfect for learning, prototyping, or as a foundation for your next project.
+A simple **Hello World** project built with **React**, **TypeScript**, and **Vite**. It serves as a minimal starter to demonstrate a clean React + TypeScript setup with a fast, modern dev experience — perfect for learning, prototyping, or as a foundation for your next project.
 
 [![License: MIT](./LICENSE.txt)](./LICENSE.txt)
 [![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![CI](https://github.com/michelbr84/hello-world-app/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/michelbr84/hello-world-app/actions/workflows/ci.yml)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-222?logo=github)](https://michelbr84.github.io/hello-world-app/)
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
@@ -12,14 +13,14 @@ A simple **Hello World** project built with **React** and **TypeScript**, scaffo
 
 ---
 
-## 🌐 Features
+## ✨ Features
 
-- 📦 **React 18** with functional components and hooks
-- 🔧 **TypeScript** for static typing and better developer experience
+- ⚛️ **React 18** with functional components and hooks
+- 🔷 **TypeScript** for static typing and better developer experience
 - 🧪 **Jest** + **React Testing Library** ready for unit tests
 - 📦 **Production-ready build** with code splitting and optimization
-- 🎯 **Strict browser support** for modern browsers (Chrome, Firefox, Safari)
-- ✨ **Prettier** — opinionated code formatter for consistent style
+- 🌐 **Strict browser support** for modern browsers (Chrome, Firefox, Safari)
+- 🎨 **Prettier** — opinionated code formatter for consistent style
 - 🧹 **ESLint** — with React + TypeScript rules for clean, bug-free code
 - 🪝 **Husky + lint-staged** — automatic linting and formatting on every commit
 - 📝 **Commitlint** — enforces [Conventional Commits](https://www.conventionalcommits.org/) for a tidy history
@@ -27,24 +28,35 @@ A simple **Hello World** project built with **React** and **TypeScript**, scaffo
 
 ---
 
-## 📂 Project Structure
+## 🏗️ Project Structure
 
 ```
 hello-world-app/
-├── public/         # index.html     # HTML template
-├── src/            # App.css         # App-level styles
-│                   # App.tsx         # Main App component
-│                   # index.tsx       # Entry point
-├── .eslintrc.json             # ESLint configuration
-├── .eslintignore             # ESLint ignore patterns
-├── .prettierrc               # Prettier configuration
-├── .gitattributes            # Git attributes
-├── .gitignore                # Ignored files
-├── LICENSE.txt               # MIT License
-├── package.json              # Dependencies & scripts
-├── package-lock.json         # Locked dependency tree
-├── README.md                 # You are here!
-├── ROADMAP.md                # Project roadmap
+├── index.html           # Vite HTML entry
+├── src/                 # App.css           # App-level styles
+│                        # App.tsx           # Main App component
+│                        # App.test.tsx      # App unit tests
+│                        # main.tsx          # React entry point
+│                        # test-setup.ts     # Vitest global setup
+├── .editorconfig        # Editor defaults
+├── .eslintrc.json       # ESLint configuration
+├── .eslintignore        # ESLint ignore patterns
+├── .nvmrc               # Node.js version pin
+├── .prettierrc          # Prettier configuration
+├── .gitattributes       # Git attributes
+├── .gitignore           # Ignored files
+├── CHANGELOG.md         # Notable changes per release
+├── CONTRIBUTING.md      # Contribution guide
+├── LICENSE.txt          # MIT License
+├── package.json         # Dependencies & scripts
+├── package-lock.json    # Locked dependency tree
+├── README.md            # You are here!
+├── ROADMAP.md           # Project roadmap
+├── TODO.md              # Housekeeping tasks
+├── commitlint.config.js # Commitlint rules
+├── tsconfig.json        # TypeScript config (app)
+├── tsconfig.node.json   # TypeScript config (Vite/Node)
+└── vite.config.ts       # Vite + Vitest configuration
 ```
 
 ---
@@ -91,16 +103,15 @@ Make sure you have the following installed:
 
 In the project directory, you can run:
 
-| Script              | Description |
-| --- | --- |
-| `npm start`         | Runs the app in development mode at `http://localhost:3000`. |
-| `npm test`          | Launches the test runner in interactive watch mode. |
-| `npm run build`     | Builds the app for production to the `build/` folder. |
-| `npm run eject`     | ⚠️ Ejects from Create React App (one-way operation, use with caution). |
-| `npm run lint`      | Runs ESLint on all `.ts` / `.tsx` files under `src/`. |
-| `npm run lint:fix`  | Runs ESLint and automatically applies safe fixes where possible. |
-| `npm run format`    | Formats all source files with Prettier (`.ts`, `.tsx`, `.css`). |
-| `npm run format:check` | Verifies that all source files match Prettier formatting without modifying them (useful for CI). |
+| Script                | Description                                                                 |
+| --------------------- | --------------------------------------------------------------------------- |
+| `npm start`           | Runs the app in development mode at `http://localhost:3000`.                |
+| `npm test`            | Launches the test runner in interactive watch mode.                         |
+| `npm run build`       | Builds the app for production to the `build/` folder.                      |
+| `npm run lint`        | Runs ESLint on all `.ts` / `.tsx` files under `src/`.                       |
+| `npm run lint:fix`    | Runs ESLint and automatically applies safe fixes where possible.           |
+| `npm run format`      | Formats all source files with Prettier (`.ts`, `.tsx`, `.css`).            |
+| `npm run format:check`| Verifies that all source files match Prettier formatting without modifying them (useful for CI). |
 
 ---
 
@@ -155,11 +166,11 @@ For the best experience, install these editor extensions:
 
 ---
 
-## 🏗️ Built With
+## 🛠️ Built With
 
 - **[React](https://reactjs.org/)** — A JavaScript library for building user interfaces.
 - **[TypeScript](https://www.typescriptlang.org/)** — Typed JavaScript at any scale.
-- **[Create React App](https://create-react-app.dev/)** — A comfortable setup for React projects with no build configuration.
+- **[Vite](https://vitejs.dev/)** — A fast, modern frontend build tool with a great dev experience.
 - **[ESLint](https://eslint.org/)** — Pluggable linter for JavaScript and TypeScript.
 - **[Prettier](https://prettier.io/)** — Opinionated code formatter.
 - **[Husky](https://typicode.github.io/husky/)** — Modern Git hooks made easy.
@@ -168,7 +179,7 @@ For the best experience, install these editor extensions:
 
 ---
 
-## 🌍 Browser Support
+## 🌏 Browser Support
 
 The production build supports browsers that meet the following criteria:
 
@@ -183,7 +194,7 @@ The production build supports browsers that meet the following criteria:
 npm test
 ```
 
-This launches the test runner in interactive watch mode. See the [Create React App testing docs](https://create-react-app.dev/docs/running-tests/) for more information.
+This launches the test runner in interactive watch mode. See the [Vitest docs](https://vitest.dev/guide/) for more information on configuring tests, coverage, and CI mode.
 
 ---
 
@@ -197,11 +208,11 @@ The build is minified, optimized, and the filenames include hashes for cache bus
 
 ---
 
-## 🌐 Deployment
+## 🚀 Deployment
 
 A live demo is automatically published to **GitHub Pages** on every push to `master` via the CI workflow:
 
-👉 **https://michelbr84.github.io/hello-world-app/**
+🌐 **https://michelbr84.github.io/hello-world-app/**
 
 How it works:
 
@@ -212,10 +223,10 @@ How it works:
 One-time setup (manual, outside the codebase):
 
 1. Go to **Settings → Pages** for the repository.
-2. Under **Source**, select **"GitHub Actions"**.
-3. That's it — subsequent pushes to `master` will trigger a fresh deploy.
+2. Under **Source**, select **GitHub Actions**.
+3. That's it! Subsequent pushes to `master` will trigger a fresh deploy.
 
-The `homepage` field in `package.json` is set to the Pages URL so Create React App generates correct absolute asset paths under the `/hello-world-app/` sub-path.
+The `base` setting in `vite.config.ts` is set to `/hello-world-app/` so Vite generates correct absolute asset paths under the GitHub Pages sub-path.
 
 ---
 
@@ -230,7 +241,7 @@ Contributions are what make the open-source community such an amazing place to l
 5. Push to the branch (`git push origin feature/AmazingFeature`)
 6. Open a Pull Request
 
-> 🚀 The pre-commit hook will automatically lint and format your staged files, and the commit-msg hook will verify that your commit message follows the Conventional Commits format.
+> 🚨 The pre-commit hook will automatically lint and format your staged files, and the commit-msg hook will verify that your commit message follows the Conventional Commits format.
 
 ---
 
@@ -248,7 +259,7 @@ Distributed under the **MIT License**. See [`LICENSE.txt`](./LICENSE.txt) for th
 
 ---
 
-## ⭐ Show Your Support
+## 💖 Show Your Support
 
 If you find this project helpful or inspiring, please consider giving it a **star** ⭐ on GitHub — it helps others discover it too!
 
