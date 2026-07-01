@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Dark mode toggle: a small theme-switch button (🌙/☀️) in the top-right
+  corner of the page. The current theme is persisted to `localStorage`
+  and the initial theme respects the user's `prefers-color-scheme` media
+  query. An inline pre-mount script in `public/index.html` applies the
+  theme before React loads to avoid a flash of the wrong color scheme.
+  All hardcoded colors in `src/App.css` are now expressed as CSS custom
+  properties (`:root` for light, `[data-theme="dark"]` for dark) so the
+  rest of the app automatically adapts. Two additional unit tests cover
+  the toggle button and the `data-theme` switch. `src/setupTests.ts` now
+  polyfills `window.matchMedia` for jsdom.
+
 ## [0.4.0] - 2026-07-01
 
 ### Added
@@ -71,7 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Commitlint** (`@commitlint/config-conventional`) to enforce the [Conventional Commits](https://www.conventionalcommits.org/) format on commit messages.
 - **`CONTRIBUTING.md`** with contribution guidelines, branching strategy, coding standards, commit-message conventions, and PR process.
 - **`CHANGELOG.md`** to track notable changes per release.
-- **GitHub Actions CI** workflow (`.github/workflows/ci.yml`) that runs `npm ci`, `npm run lint`, `npm test -- --watchAll=false --ci`, and `npm run build` on every push to `master` and on every pull request.
+- **GitHub Actions CI** workflow (`.github/workflows/ci.yml`) that runs `npm ci`, `npm run lint`, `npm test -- --watchAll=false --ci`, and `npm run build` on every push to `master` and on every pull request to `master`.
 
 ### Changed
 
