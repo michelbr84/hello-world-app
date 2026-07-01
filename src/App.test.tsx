@@ -62,3 +62,82 @@ test('clicking the theme toggle flips the data-theme attribute on the document',
   expect(nextTheme).not.toBe(initialTheme);
   expect(['light', 'dark']).toContain(nextTheme);
 });
+
+describe('theme system coverage', () => {
+  // The theme system is global: it reads from `window.matchMedia`,
+  // writes to `localStorage`, and mutates `document.documentElement`.
+  // Reset all three between tests so each one starts from a known
+  // baseline and tests are order-independent.
+  beforeEach(() => {
+    window.matchMedia = vi.fn().mockImplementation((query: string) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    }));
+    localStorage.clear();
+    document.documentElement.removeAttribute('data-theme');
+  });
+
+  test('respects prefers-color-scheme: dark when no localStorage value exists', () => {
+    // Simulate the OS reporting a dark color-scheme preference. The
+    // default polyfill in `src/test-setup.ts` always returns
+    // `matches: false`, so this path was previously never exercised.
+    window.matchMedia = vi.fn().mockImplementation((query: string) => ({
+      matches: query === '(prefers-color-scheme: dark)',
+      media: query,
+      onchange: null,
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    }));
+
+    render(<App />);
+
+    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+  });
+
+  test('persists theme preference in localStorage and restores it across remounts', () => {
+    const { unmount } = render(<App />);
+
+    // No localStorage, no dark-mode preference → defaults to light.
+    expect(document.documentElement.getAttribute('data-theme')).toBe('light');
+
+    // Toggle to dark and verify both side-effects.
+    const toggle = screen.getByRole('button', { name: /switch to dark theme/i });
+    fireEvent.click(toggle);
+
+    expect(localStorage.getItem('hello-world-app:theme')).toBe('dark');
+    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+
+    // Unmount and re-render. The new instance should restore the
+    // theme from localStorage, not fall through to the matchMedia
+    // check (mocked to `matches: false` → would yield 'light').
+    unmount();
+    render(<App />);
+
+    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+  });
+
+  test('updates the toggle button aria-label and emoji after clicking', () => {
+    render(<App />);
+
+    // Initial: light theme. The button label announces the next
+    // theme (dark) and the emoji reflects the current (light) state.
+    const lightButton = screen.getByRole('button', { name: /switch to dark theme/i });
+    expect(lightButton).toHaveTextContent('☀️');
+
+    // Click to switch to dark.
+    fireEvent.click(lightButton);
+
+    // Now in dark mode: label and emoji both flip.
+    const darkButton = screen.getByRole('button', { name: /switch to light theme/i });
+    expect(darkButton).toHaveTextContent('🌙');
+  });
+});
