@@ -23,7 +23,7 @@ contribution workflow, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
 ## Housekeeping
 
-- [x] Real `README.md` (see root) 🚧 superseded the previous generic
+- [x] Real `README.md` (see root) — superseded the previous generic
   placeholder that used to live in this file
 
 ## Cleanup
@@ -63,3 +63,18 @@ contribution workflow, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
   > 0-byte orphans. The exact command for a human to run locally is
   > shown above. No further automated action is possible until a
   > deletion-capable tool or a human with shell access picks this up.
+  >
+  > **Status (2026-07-02, follow-up #2):** A third automated attempt
+  > to delete the files via the GitHub Contents API was also
+  > unsuccessful for the same reason — the available tooling surface
+  > (repository-contents `get`, `list`, `create`, and `edit`
+  > operations) does not expose a file-deletion operation, and no
+  > shell-level `git rm` tool is available to this automation. The
+  > three files still remain on `master` as 0-byte orphans. The
+  > only change in this commit is the addition of this status note
+  > itself; no file content was modified and no destructive action
+  > was taken. The exact command for a human with shell access to
+  > run locally remains the one shown above. Until a deletion-
+  > capable tool or a human picks this up, the gap between the
+  > documentation (which states the files are gone) and the branch
+  > (where they still exist) persists.
