@@ -1,0 +1,6 @@
+# This file is intentionally left blank.
+#
+# It exists solely to keep the `public/` directory tracked in git after
+# the dead Create React App stub `public/index.html` was removed.
+# The active Vite HTML entry is the root `index.html`, which loads
+# `src/main.tsx`.
