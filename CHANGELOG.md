@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- Finally removed the three dead Create React App stub files from the Git
+  working tree (`public/index.html`, `src/index.tsx`, `src/setupTests.ts` —
+  all 0-byte files). They were documented as "Removed" in the v0.6.0
+  CHANGELOG entry but had been left committed to `master`. This commit
+  closes that doc-vs-reality gap.
+
 ## [0.6.0] - 2026-07-01
 
 ### Added
@@ -29,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Dark mode toggle: a small theme-switch button (🌞/🌙) in the top-right
+- Dark mode toggle: a small theme-switch button (☀️/🌙) in the top-right
   corner of the page. The current theme is persisted to `localStorage`
   and the initial theme respects the user's `prefers-color-scheme` media
   query. An inline pre-mount script in `index.html` applies the
@@ -57,7 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   from the Actions tab (useful for redeploying without a code change).
 - Build artifact (`build/`) is now uploaded on non-PR runs for quick
   debugging via the Actions UI.
-- README updated with a "Live Demo" badge, a new `## Deployment` section
+- README updated with a "Live Demo" badge, a new `### Deployment` section
   explaining how the pipeline works, and the one-time repository setting
   required to enable GitHub Pages via Actions.
 
