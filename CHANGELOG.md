@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-07-01
+
+### Added
+
+- Tiny interactive feature: a name-greeting input in `App` that renders a
+  personalised "Hello, {name}!" message once the user types a non-blank name.
+- Two additional unit tests in `App.test.tsx` covering the personalised
+  greeting and whitespace trimming behaviour.
+- `.editorconfig` at the repository root for consistent editor defaults
+  (charset, EOL, indentation).
+- `test:coverage` npm script (`react-scripts test --coverage --watchAll=false`)
+  to generate a Jest/Istanbul coverage report locally and in CI.
+- CI step that generates a coverage report and uploads the `coverage/`
+  directory as a build artifact (always run, even when the test step fails).
+- Dependabot configuration (`.github/dependabot.yml`) for weekly grouped
+  dependency updates (with React 18.x ignored while the project targets v18).
+
+### Changed
+
+- CI workflow now reads the Node version from `.nvmrc` instead of a hardcoded
+  value, keeping local and CI environments in sync.
+- ROADMAP v0.3.0 status reflects the items shipped in this release.
+
 ## [0.2.0] - 2026-07-01
 
 ### Added
@@ -39,6 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **MIT License** (`LICENSE.txt`).
 - Polished `README.md` with badges, getting-started guide, available scripts, and developer tooling documentation.
 
-[Unreleased]: https://github.com/michelbr84/hello-world-app/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/michelbr84/hello-world-app/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/michelbr84/hello-world-app/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/michelbr84/hello-world-app/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/michelbr84/hello-world-app/releases/tag/v0.1.0
