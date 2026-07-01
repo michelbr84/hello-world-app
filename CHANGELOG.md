@@ -14,9 +14,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New `vite.config.ts` that consolidates the dev server, build, and Vitest configuration (including the v8 coverage reporters).
 - Added `.github/CODEOWNERS` so the repository owner is auto-assigned as the default reviewer for all pull requests.
 
-### Removed
+### Pending cleanup (v0.6.0)
 
-- Dead Create React App artifacts that are no longer referenced anywhere in the project: `public/index.html`, `src/index.tsx`, and `src/setupTests.ts`.
+The following Create React App artifacts are no longer referenced anywhere in the project (Vite + Vitest only use the root `index.html`, `src/main.tsx`, and `src/test-setup.ts`), but they are still tracked in the repository and must be removed in a follow-up commit:
+
+- `public/index.html` (0-byte stub, not used by Vite)
+- `src/index.tsx` (0-byte stub, not the real entry point)
+- `src/setupTests.ts` (0-byte stub, replaced by `src/test-setup.ts`)
+
+Tracked here so the v0.6.0 release notes can be finalized once `git rm` clears these files.
 
 ### Changed
 
@@ -27,7 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Dark mode toggle: a small theme-switch button (🙈/😊) in the top-right
+- Dark mode toggle: a small theme-switch button (🌓) in the top-right
   corner of the page. The current theme is persisted to `localStorage`
   and the initial theme respects the user's `prefers-color-scheme` media
   query. An inline pre-mount script in `index.html` applies the
@@ -78,7 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   greeting and whitespace trimming behaviour.
 - `.editorconfig` at the repository root for consistent editor defaults
   (charset, EOL, indentation).
-- `test:coverage` npm script (`vitest run --coverage --run`) to generate
+- `test:coverage` npm script (`vitest run --coverage`) to generate
   a Vitest coverage report locally and in CI.
 - CI step that generates a coverage report and uploads the `coverage/`
   directory as a build artifact (always runs, even when the test step fails).
@@ -102,7 +108,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Commitlint** (`@commitlint/config-conventional`) to enforce the [Conventional Commits](https://www.conventionalcommits.org/) format on commit messages.
 - **`CONTRIBUTING.md`** with contribution guidelines, branching strategy, coding standards, commit-message conventions, and PR process.
 - **`CHANGELOG.md`** to track notable changes per release.
-- **GitHub Actions CI** workflow (`.github/workflows/ci.yml`) that runs `npm ci`, `npm run lint`, `npm test -- --run --ci`, and `npm run build` on every push to `master` and on every pull request to `master`.
+- **GitHub Actions CI** workflow (`.github/workflows/ci.yml`) that runs `npm ci`, lint, test (`--run --ci`), and `npm run build` on every push to `master` and on every pull request to `master`.
 
 ### Changed
 
