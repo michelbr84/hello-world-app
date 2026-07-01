@@ -17,7 +17,7 @@ contribution workflow, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 ## Developer experience
 
 - [x] Add a `CODEOWNERS` file once a maintainer team is defined
-- [~] Apply repository labels (`good first issue`, `help wanted`) so the
+- [x] Apply repository labels (`good first issue`, `help wanted`) so the
   items above are discoverable by new contributors
   (this lives in the GitHub repository settings, not the codebase)
 
