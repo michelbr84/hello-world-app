@@ -2,6 +2,7 @@
   "name": "hello-world-app",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://michelbr84.github.io/hello-world-app",
   "description": "A simple React + TypeScript Hello World project.",
   "scripts": {
     "start": "react-scripts start",
