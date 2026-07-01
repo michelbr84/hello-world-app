@@ -29,3 +29,18 @@ test('trims whitespace around the typed name in the greeting', () => {
 
   expect(screen.getByTestId('greeting')).toHaveTextContent('Hello, Grace!');
 });
+
+test('click counter starts at zero and increments when the button is clicked', () => {
+  render(<App />);
+  const counter = screen.getByTestId('counter-value');
+  const button = screen.getByRole('button', { name: /click me/i });
+
+  expect(counter).toHaveTextContent('0');
+
+  fireEvent.click(button);
+  expect(counter).toHaveTextContent('1');
+
+  fireEvent.click(button);
+  fireEvent.click(button);
+  expect(counter).toHaveTextContent('3');
+});
