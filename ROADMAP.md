@@ -4,11 +4,11 @@ This roadmap tracks the planned evolution of **Hello World App** — a minimal
 React + TypeScript starter. It reflects what has already shipped, what is
 next, and longer-term ideas. Items may move as priorities shift.
 
-> Status legend: `[x]` shipped · `[ ]` planned
+> Status legend: `[x]` shipped  •  `[ ]` planned
 
 ---
 
-## ✅ Shipped
+## 🚢 Shipped
 
 ### v0.1.0 — Initial release
 
@@ -52,16 +52,28 @@ Focus: small, demo-quality feature additions and better test/documentation accur
 - [x] Manual workflow trigger via `workflow_dispatch`
 - [x] Upload the `build/` directory as a workflow artifact on non-PR runs
 
+### v0.5.0 — Dark mode
+
+- [x] Dark mode toggle: a small theme-switch button (☀️/🌙) in the top-right
+  corner of the page. The current theme is persisted to `localStorage`
+  and the initial theme respects the user's `prefers-color-scheme` media
+  query. An inline pre-mount script in `public/index.html` applies the
+  theme before React loads to avoid a flash of the wrong color scheme.
+  All hardcoded colors in `src/App.css` are now expressed as CSS custom
+  properties (`:root` for light, `[data-theme="dark"]` for dark) so the
+  rest of the app automatically adapts.
+- [x] Two additional unit tests covering the toggle button and the `data-theme` switch
+- [x] `src/setupTests.ts` polyfills `window.matchMedia` for jsdom
+
 ---
 
-## 🆕 Future (v1.0.0+)
+## 🔮 Future (v1.0.0+)
 
 Longer-term directions; not yet committed. Discussions should happen in an issue before any PR.
 
 - [ ] Migrate from Create React App to **Vite** for faster dev server and build
 - [ ] Add **Storybook** for component documentation
 - [ ] Internationalization (i18n) support
-- [ ] Dark mode toggle
 - [ ] End-to-end tests with **Playwright**
 - [ ] Extract `App` into a small, reusable component library
 
