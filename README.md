@@ -6,21 +6,22 @@ A simple **Hello World** project built with **React** and **TypeScript**, scaffo
 [![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![CI](https://github.com/michelbr84/hello-world-app/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/michelbr84/hello-world-app/actions/workflows/ci.yml)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-222?logo=github)](https://michelbr84.github.io/hello-world-app/)
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 [![Linted: ESLint](https://img.shields.io/badge/linted-eslint-4B32C3.svg)](https://eslint.org/)
 
 ---
 
-## ✨ Features
+## 🌐 Features
 
-- 🔥 **React 18** with functional components and hooks
-- 🧪 **TypeScript** for static typing and better developer experience
+- 📦 **React 18** with functional components and hooks
+- 🔧 **TypeScript** for static typing and better developer experience
 - 🧪 **Jest** + **React Testing Library** ready for unit tests
 - 📦 **Production-ready build** with code splitting and optimization
-- 🌐 **Strict browser support** for modern browsers (Chrome, Firefox, Safari)
-- 💪 **Prettier** — opinionated code formatter for consistent style
-- 🔭 **ESLint** — with React + TypeScript rules for clean, bug-free code
-- 🐶 **Husky + lint-staged** — automatic linting and formatting on every commit
+- 🎯 **Strict browser support** for modern browsers (Chrome, Firefox, Safari)
+- ✨ **Prettier** — opinionated code formatter for consistent style
+- 🧹 **ESLint** — with React + TypeScript rules for clean, bug-free code
+- 🪝 **Husky + lint-staged** — automatic linting and formatting on every commit
 - 📝 **Commitlint** — enforces [Conventional Commits](https://www.conventionalcommits.org/) for a tidy history
 - 🚫 **Zero runtime dependencies** beyond React itself
 
@@ -29,7 +30,21 @@ A simple **Hello World** project built with **React** and **TypeScript**, scaffo
 ## 📂 Project Structure
 
 ```
-hello-world-app/├── public/│   ├── index.html        # HTML template├── src/│   ├── App.css           # App-level styles│   ├── App.tsx           # Main App component│   ├── index.tsx         # Entry point├── .eslintrc.json        # ESLint configuration├── .eslintignore         # ESLint ignore patterns├── .prettierrc           # Prettier configuration├── .gitattributes        # Git attributes├── .gitignore            # Ignored files├── LICENSE.txt           # MIT License├── package.json          # Dependencies & scripts├── package-lock.json     # Locked dependency tree├── README.md             # You are here!├── ROADMAP.md            # Project roadmap
+hello-world-app/
+├── public/         # index.html     # HTML template
+├── src/            # App.css         # App-level styles
+│                   # App.tsx         # Main App component
+│                   # index.tsx       # Entry point
+├── .eslintrc.json             # ESLint configuration
+├── .eslintignore             # ESLint ignore patterns
+├── .prettierrc               # Prettier configuration
+├── .gitattributes            # Git attributes
+├── .gitignore                # Ignored files
+├── LICENSE.txt               # MIT License
+├── package.json              # Dependencies & scripts
+├── package-lock.json         # Locked dependency tree
+├── README.md                 # You are here!
+├── ROADMAP.md                # Project roadmap
 ```
 
 ---
@@ -76,16 +91,16 @@ Make sure you have the following installed:
 
 In the project directory, you can run:
 
-| Script                       | Description                                                                                                                                                                                                |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm start`                  | Runs the app in development mode at `http://localhost:3000`.                                                                                                                                                |
-| `npm test`                   | Launches the test runner in interactive watch mode.                                                                                                                                                        |
-| `npm run build`              | Builds the app for production to the `build/` folder.                                                                                                                                                      |
-| `npm run eject`              | ⚠️ Ejects from Create React App (one-way operation, use with caution).                                                                                                                                     |
-| `npm run lint`               | Runs ESLint on all `.ts` / `.tsx` files under `src/`.                                                                                                                                                      |
-| `npm run lint:fix`           | Runs ESLint and automatically applies safe fixes where possible.                                                                                                                                            |
-| `npm run format`             | Formats all source files with Prettier (`.ts`, `.tsx`, `.css`).                                                                                                                                            |
-| `npm run format:check`       | Verifies that all source files match Prettier formatting without modifying them (useful for CI).                                                                                                            |
+| Script              | Description |
+| --- | --- |
+| `npm start`         | Runs the app in development mode at `http://localhost:3000`. |
+| `npm test`          | Launches the test runner in interactive watch mode. |
+| `npm run build`     | Builds the app for production to the `build/` folder. |
+| `npm run eject`     | ⚠️ Ejects from Create React App (one-way operation, use with caution). |
+| `npm run lint`      | Runs ESLint on all `.ts` / `.tsx` files under `src/`. |
+| `npm run lint:fix`  | Runs ESLint and automatically applies safe fixes where possible. |
+| `npm run format`    | Formats all source files with Prettier (`.ts`, `.tsx`, `.css`). |
+| `npm run format:check` | Verifies that all source files match Prettier formatting without modifying them (useful for CI). |
 
 ---
 
@@ -105,7 +120,7 @@ npm run format:check
 # Lint your code
 npm run lint
 
-# Lint and apply auto-fixes
+# Lint and apply auto-fixers
 npm run lint:fix
 ```
 
@@ -121,13 +136,13 @@ The hooks are installed automatically by the `prepare` script after `npm install
 **Commit message examples:**
 
 ```bash
-# ✅ Valid — passes commitlint
+# ✅ Valid ✅ passes commitlint
 git commit -m "feat: add greeting component"
 git commit -m "fix: resolve hot-reload crash"
 git commit -m "docs: update README with setup steps"
 git commit -m "chore: bump dependencies"
 
-# ❌ Invalid — will be rejected
+# ❌ Invalid ❌ will be rejected
 git commit -m "added stuff"
 ```
 
@@ -153,7 +168,7 @@ For the best experience, install these editor extensions:
 
 ---
 
-## 🌐 Browser Support
+## 🌍 Browser Support
 
 The production build supports browsers that meet the following criteria:
 
@@ -182,6 +197,28 @@ The build is minified, optimized, and the filenames include hashes for cache bus
 
 ---
 
+## 🌐 Deployment
+
+A live demo is automatically published to **GitHub Pages** on every push to `master` via the CI workflow:
+
+👉 **https://michelbr84.github.io/hello-world-app/**
+
+How it works:
+
+1. The `quality` job runs lint, tests, coverage, and `npm run build` on every push and pull request.
+2. On a push to `master` (only), the `deploy` job runs after `quality` succeeds.
+3. The deploy job rebuilds the app, uploads `build/` as a Pages artifact, and publishes it via the official `actions/deploy-pages` action.
+
+One-time setup (manual, outside the codebase):
+
+1. Go to **Settings → Pages** for the repository.
+2. Under **Source**, select **"GitHub Actions"**.
+3. That's it — subsequent pushes to `master` will trigger a fresh deploy.
+
+The `homepage` field in `package.json` is set to the Pages URL so Create React App generates correct absolute asset paths under the `/hello-world-app/` sub-path.
+
+---
+
 ## 🤝 Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -193,7 +230,7 @@ Contributions are what make the open-source community such an amazing place to l
 5. Push to the branch (`git push origin feature/AmazingFeature`)
 6. Open a Pull Request
 
-> 💡 The pre-commit hook will automatically lint and format your staged files, and the commit-msg hook will verify that your commit message follows the Conventional Commits format.
+> 🚀 The pre-commit hook will automatically lint and format your staged files, and the commit-msg hook will verify that your commit message follows the Conventional Commits format.
 
 ---
 
@@ -203,7 +240,7 @@ Distributed under the **MIT License**. See [`LICENSE.txt`](./LICENSE.txt) for th
 
 ---
 
-## 👤 Author
+## ✍️ Author
 
 **michelbr84**
 
