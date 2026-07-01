@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-07-01
+
 ### Added
 
-- Dark mode toggle: a small theme-switch button (🌙/☀️) in the top-right
+- Dark mode toggle: a small theme-switch button (☀️/🌙) in the top-right
   corner of the page. The current theme is persisted to `localStorage`
   and the initial theme respects the user's `prefers-color-scheme` media
   query. An inline pre-mount script in `public/index.html` applies the
@@ -105,7 +107,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **MIT License** (`LICENSE.txt`).
 - Polished `README.md` with badges, getting-started guide, available scripts, and developer tooling documentation.
 
-[Unreleased]: https://github.com/michelbr84/hello-world-app/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/michelbr84/hello-world-app/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/michelbr84/hello-world-app/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/michelbr84/hello-world-app/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/michelbr84/hello-world-app/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/michelbr84/hello-world-app/compare/v0.1.0...v0.2.0
