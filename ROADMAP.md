@@ -4,7 +4,7 @@ This roadmap tracks the planned evolution of **Hello World App** — a minimal
 React + TypeScript starter. It reflects what has already shipped, what is
 next, and longer-term ideas. Items may move as priorities shift.
 
-> Status legend: `[x]` shipped  ·  `[ ]` planned
+> Status legend: `[x]` shipped  · `[ ]` planned
 
 ---
 
@@ -33,8 +33,6 @@ next, and longer-term ideas. Items may move as priorities shift.
 - [x] `CHANGELOG.md` to track notable changes per release
 - [x] **GitHub Actions CI** (`.github/workflows/ci.yml`) — `npm ci`, lint, test (`--watchAll=false --ci`), and build on every push and pull request to `master`
 
----
-
 ### v0.3.0 — Interactive feature & coverage foundations
 
 Focus: small, demo-quality feature additions and better test/documentation accuracy.
@@ -46,9 +44,17 @@ Focus: small, demo-quality feature additions and better test/documentation accur
 - [x] Enable Dependabot for automated dependency updates
 - [x] CI: read the Node version from `.nvmrc` instead of hardcoding `18`
 
+### v0.4.0 — GitHub Pages deployment
+
+- [x] Publish a demo build to **GitHub Pages** (CI `deploy` job using
+  `actions/configure-pages` + `actions/upload-pages-artifact` +
+  `actions/deploy-pages`; `homepage` field set in `package.json`)
+- [x] Manual workflow trigger via `workflow_dispatch`
+- [x] Upload the `build/` directory as a workflow artifact on non-PR runs
+
 ---
 
-## 💡 Future (v1.0.0+)
+## 🠱 Future (v1.0.0+)
 
 Longer-term directions; not yet committed. Discussions should happen in an issue before any PR.
 
@@ -57,12 +63,11 @@ Longer-term directions; not yet committed. Discussions should happen in an issue
 - [ ] Internationalization (i18n) support
 - [ ] Dark mode toggle
 - [ ] End-to-end tests with **Playwright**
-- [ ] Publish a demo build to **GitHub Pages**
 - [ ] Extract `App` into a small, reusable component library
 
 ---
 
-## 🙋 Suggesting changes
+## 💡 Suggesting changes
 
 Open an issue first to discuss significant changes before sending a PR.
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the contribution workflow
