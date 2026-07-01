@@ -9,11 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- Finally removed the three dead Create React App stub files from the Git
-  working tree (`public/index.html`, `src/index.tsx`, `src/setupTests.ts` —
-  all 0-byte files). They were documented as "Removed" in the v0.6.0
-  CHANGELOG entry but had been left committed to `master`. This commit
-  closes that doc-vs-reality gap.
+- The three dead Create React App stub files (`public/index.html`,
+  `src/index.tsx`, `src/setupTests.ts`) are scheduled to be removed from
+  the Git working tree. They were already documented as "Removed" in the
+  v0.6.0 entry below, but the physical `git rm` was never committed to
+  `master`, so the stubs (small placeholder files carrying deprecation
+  comments) are still tracked. The exact command to run is:
+
+  ```bash
+  git rm public/index.html src/index.tsx src/setupTests.ts
+  ```
+
+  This entry is intentionally written in the pending / planned voice so
+  the CHANGELOG stays honest about what has actually shipped. Once the
+  deletion commit lands, this section can be tightened to past tense or
+  folded into a v0.6.1 / v0.7.0 release entry.
 
 ## [0.6.0] - 2026-07-01
 
@@ -21,7 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Migrated the project from Create React App to **Vite 5** for a faster dev server and a leaner production build. The new HTML entry is the root `index.html`, which loads `src/main.tsx` as an ES module.
 - Switched unit tests from Jest to **Vitest** (jsdom environment). The setup file is now `src/test-setup.ts`, registered via `setupFiles` in `vite.config.ts`. The `npm test` script uses Vitest's native non-watch flags (`--run --ci` in CI) for one-shot runs.
-- New `vite.config.ts` that consolidates the dev server, build, and Vitest configuration (including the v8 coverage reporters).
+- New `vite.config.ts` that consolidates the dev server, build, and Vitest configuration (including the v8 coverage reporters)
 - Added `.github/CODEOWNERS` so the repository owner is auto-assigned as the default reviewer for all pull requests.
 
 ### Changed
@@ -37,7 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Dark mode toggle: a small theme-switch button (☀️/🌙) in the top-right
+- Dark mode toggle: a small theme-switch button (🌓/🌞) in the top-right
   corner of the page. The current theme is persisted to `localStorage`
   and the initial theme respects the user's `prefers-color-scheme` media
   query. An inline pre-mount script in `index.html` applies the
